@@ -1,5 +1,133 @@
 " MJ's .vimrc this is it folks ... yerp
 
+" Bundles with vundle
+" NOTE: comments after Bundle command are not allowed..
+
+filetype off                           " required for vundle to work
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" My Bundles will go here ...
+"
+
+" repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+Bundle 'ervandew/screen'
+Bundle 'rson/vim-conque'
+Bundle 'vim-scripts/Vim-R-plugin'
+Bundle 'tpope/vim-surround'
+Bundle 'Raimondi/delimitMate'
+Bundle 'wincent/Command-T'
+Bundle 'mutewinter/vim-indent-guides'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'gotcha/vimpdb'
+Bundle 'vim-scripts/Gundo'
+Bundle 'kevinw/pyflakes-vim'
+Bundle 'vim-scripts/pep8'
+Bundle 'vim-scripts/LaTeX-Box'
+Bundle 'docunext/closetag.vim'
+
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+" ...
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+filetype on                            " turn filetype back on
+
+""" ===>>> Working with the plugs
+
+" fugitive -- http://vimcasts.org/blog/2011/05/the-fugitive-series/
+
+
+" easymotion
+
+
+" sparkup
+
+
+" vim-rails
+
+
+" screen
+
+
+" conque
+
+" Vim-R-plugin
+let vimrplugin_applescript = 0
+let vimrplugin_screenplugin = 0
+let vimrplugin_underscore = 0
+
+" map <D-1> to <- when editing .r files
+autocmd FileType r inoremap <buffer> <D-1> <space><-<space>
+
+" surround
+
+
+" delimitMate
+
+
+" Command-T (causing me headaches)
+
+
+" vim-indent-guides
+
+
+" Jellybeans - if you call jellybeans prior to Bundle, it won't be found
+color jellybeans                       " set color-scheme to jellybeans
+
+" nerdtree
+
+
+
+" nerdcommenter
+
+
+" taglist
+"
+"
+" vimpdb
+"
+"
+" Gundo
+"
+"
+" pyflakes
+"
+"
+" pep8
+"
+"
+" LaTeX-Box
+"
+"
+" closetag
+
+" example Python inoremap i made for testing <buffer> maps
+autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
+" MJ's .vimrc this is it folks ... yerp
+
 """ ===>>> Auto Commands
 
 " Automatically cd into the directory that the file is in
