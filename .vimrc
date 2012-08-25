@@ -64,8 +64,8 @@ imap <C-a> <C-o>:Gwrite<CR>
 nmap <C-c> :Gcommit<CR>
 imap <C-c> <C-o>:Gcommit<CR>
 
-nmap <C-x> :Gread<CR>
-imap <C-x> <C-o>:Gread<CR>
+nmap <D-0> :Gread<CR>
+imap <D-0> <C-o>:Gread<CR>
 
 " easymotion
 
