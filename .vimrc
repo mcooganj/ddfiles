@@ -3,7 +3,6 @@
 " Bundles with vundle
 " NOTE: comments after Bundle command are not allowed..
 
-filetype off                           " required for vundle to work
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -53,7 +52,6 @@ Bundle 'git://git.wincent.com/command-t.git'
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-filetype on                            " turn filetype back on
 
 """ ===>>> Working with the plugs
 
@@ -138,7 +136,7 @@ autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
 """ ===>>> Auto Commands
 
 " Automatically cd into the directory that the file is in
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
 
 " Remove trailing whitespace from the end of the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -216,8 +214,8 @@ inoremap <C-space> <C-x><C-o>
 " Saving: re-mapped to ^s[x]
 
 " ^s saves in normal mode
-nmap <C-s> :w<cr>
-imap <C-s> <C-o>:w<CR>
+nmap <leader>w :w<cr>
+imap <C-w> <C-o>:w<CR>
 
 " for those stubborn occasions
 nmap <C-sx> :w!<cr>
