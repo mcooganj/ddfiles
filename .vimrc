@@ -16,6 +16,7 @@ Bundle 'gmarik/vundle'
 
 " repos on github
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
@@ -64,6 +65,17 @@ imap <C-c> <C-o>:Gcommit<CR>
 
 nmap <D-0> :Gread<CR>
 imap <D-0> <C-o>:Gread<CR>
+
+" unimpaired: http://vimcasts.org/episodes/bubbling-text/
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 
 " easymotion
 
@@ -225,6 +237,9 @@ map <leader>e :e! ~/.vimrc<cr>
 
 " Fast exit of vim
 map <leader>qw :q!<cr>
+
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 """ <<<===
 
