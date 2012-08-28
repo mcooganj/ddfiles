@@ -17,6 +17,8 @@ Bundle 'gmarik/vundle'
 " repos on github
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
@@ -69,13 +71,21 @@ imap <D-0> <C-o>:Gread<CR>
 " unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+nmap <D-Up> [e
+nmap <D-Down> ]e
 
 " Bubble multiple lines
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
+vmap <D-Up> [egv
+vmap <D-Down> ]egv
 
+" repeat: to add support to a plugin, add its name to the below command
+" silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+silent! call repeat#set("\<commentary>MyWonderfulMap", v:count)
+
+" commentary
+" \\\ comments out a line (takes a count), \\ comments motion (for example, \\ap comments out a paragraph).
+" \\ in visual mode comments out selection.
+" this is it
 
 " easymotion
 
@@ -153,6 +163,8 @@ autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
 " Remove trailing whitespace from the end of the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
+" Open each buffer in its own tab
+
 """ <<<===
 
 
@@ -162,9 +174,12 @@ set nocompatible		       " turn off vi compatability
 set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
 set winaltkeys=no                      " take Alt- back from the GUI
+set autowrite                          " save a buffer when you leave it
 
 " appearance -
 set bg=dark                            " set background to dark
+set switchbuf=usetab,newtab           " switch to the existing tab if already open, new if not.
+
 
 " the good stuff
 set ofu=syntaxcomplete#Complete        " turn on Omni Completion
