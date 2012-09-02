@@ -66,9 +66,9 @@ Bundle 'git://git.wincent.com/command-t.git'
 "
 " see :h vundle for more details or wiki for FAQ
 
-""" ===>>> Working with the plugs
+""" ===>>> The plugs
 
-" fugitive -- http://vimcasts.org/blog/2011/05/the-fugitive-series/
+" ==>>> fugitive -- http://vimcasts.org/blog/2011/05/the-fugitive-series/
 nmap <C-a> :Gwrite<CR>
 imap <C-a> <C-o>:Gwrite<CR>
 
@@ -78,7 +78,7 @@ imap <C-c> <C-o>:Gcommit<CR>
 nmap <D-Bslash> :Gread<CR>
 imap <D-Bslash> <C-o>:Gread<CR>
 
-" unimpaired: http://vimcasts.org/episodes/bubbling-text/
+" ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
 nmap <D-k> [e
@@ -92,24 +92,24 @@ vmap <D-j> ]egv
 " silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 " silent! call repeat#set("\<commentary>MyWonderfulMap", v:count)
 
-" commentary - just comment stuff in and out ... that's all
+" ==>>> commentary - just comment stuff in and out ... that's all
 " `\\\` comments out a line (takes a count), `\\` comments motion (for example, `\\ap` comments out a paragraph).
 " `\\` in visual mode comments out selection.
 
-" easymotion - map the easymotion leader is `;` so `;;w` executes word-search
+" ==>>> easymotion - map the easymotion leader is `;` so `;;w` executes word-search
 " see `:h easymotion-default-mappings` for deets, but most vimKeys ==> emKeys
 let g:EasyMotion_leader_key = ';'
 
-" sparkup - used for easier HTML coding: https://github.com/rstacruz/sparkup
+" ==>>> sparkup - used for easier HTML coding: https://github.com/rstacruz/sparkup
 " in html use ^E to expand skeleton, and ^N / ^P to glide through slots
 
-" vim-rails - used for ruby on rails web development
+" ==>>> vim-rails - used for ruby on rails web development
 
 
-" ack-vim - run ack inside vim, show results in a split window
+" ==>>> ack-vim - run ack inside vim, show results in a split window
 " :Ack[!] [options] {pattern} [{directory}]
 
-" conque plugin
+" ==>>> conque plugin
 " open a bash term inside vim: below or to the right
 nmap <D-F11> :ConqueTermSplit bash<CR>
 imap <D-F11> <C-o>:ConqueTermSplit bash<CR>
@@ -132,7 +132,7 @@ let g:ConqueTerm_EscKey = '<C-l>'
 " send current line to terminal, <CR>, and return focus to vim
 nmap <D-F9> V<F9><CR><Esc><C-w>w
 
-" Vim-R-plugin - it is possible to make this work with C, but undesirable
+" ==>>> Vim-R-plugin - it is possible to make this work with C, but undesirable
 " turning off AS and screen means that R runs in an external X11 terminal.
 let vimrplugin_applescript = 0
 let vimrplugin_screenplugin = 0
@@ -143,10 +143,10 @@ let vimrplugin_underscore = 0
 " map <D-1> to <- when editing .r files
 autocmd FileType r inoremap <buffer> <D-1> <space><-<space>
 
-" surround
+" ==>>> surround
 
 
-" delimitMate
+" ==>>> delimitMate
 
 
 " Command-T (causing me headaches)
