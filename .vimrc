@@ -111,8 +111,9 @@ let g:EasyMotion_leader_key = ';'
 
 " conque -
 " two maps -- one for opening in a verticle split and another for Horiz
-nmap <D-0> <c-r>:ConqueTermSplit bash<CR>
-nmap <D-9> <c-r>:ConqueTermVSplit bash<CR>
+nmap <D-F12> :ConqueTermSplit bash<CR>
+nmap <D-F11> :ConqueTermVSplit bash<CR>
+nmap <D-i> :ConqueTermVSplit ipython<CR>
 
 " kill color in vim-terminal (speeds things up)
 g:ConqueTerm_Color = 0
