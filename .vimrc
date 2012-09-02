@@ -111,8 +111,8 @@ let g:EasyMotion_leader_key = ';'
 
 " conque plugin
 " open a bash term inside vim: below or to the right
-nmap <D-F12> :ConqueTermSplit bash<CR>
-nmap <D-F11> :ConqueTermVSplit bash<CR>
+nmap <D-F11> :ConqueTermSplit bash<CR>
+nmap <D-F12> :ConqueTermVSplit bash<CR>
 
 " open an ipython term inside vim: below or to the right
 nmap <D-I> :ConqueTermSplit ipython<CR>
