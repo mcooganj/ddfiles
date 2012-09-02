@@ -1,6 +1,5 @@
 " MJ's .vimrc this is it folks ... yerp
 
-
 " Kick the crutches -- disable arrow keys
     map <up> <nop>
     map <down> <nop>
@@ -12,7 +11,7 @@
     imap <right> <nop>
 
 " Bundles with vundle
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments on same line as Bundle commands cause errors
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -105,7 +104,6 @@ let g:EasyMotion_leader_key = ';'
 
 " ==>>> vim-rails - used for ruby on rails web development
 
-
 " ==>>> ack-vim - run ack inside vim, show results in a split window
 " :Ack[!] [options] {pattern} [{directory}]
 
@@ -132,7 +130,7 @@ let g:ConqueTerm_EscKey = '<C-l>'
 " send current line to terminal, <CR>, and return focus to vim
 nmap <D-F9> V<F9><CR><Esc><C-w>w
 
-" ==>>> Vim-R-plugin - it is possible to make this work with C, but undesirable
+" ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " turning off AS and screen means that R runs in an external X11 terminal.
 let vimrplugin_applescript = 0
 let vimrplugin_screenplugin = 0
@@ -271,7 +269,7 @@ endfunction
 
 """ ===>>> Mappings
 
-" set leader to `,`
+" set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
 " remap `;.` to <Esc>
