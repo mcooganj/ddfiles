@@ -120,9 +120,11 @@ nmap <D-i> :ConqueTermVSplit ipython<CR>
 
 " kill color in vim-terminal (speeds things up)
 let g:ConqueTerm_FastMode = 1
+let g:ConqueTerm_Color = 0
 
 " send current line to terminal, <CR>, and return focus to vim
 nmap <D-F9> V<F9><CR><Esc><C-w>w
+
 
 " Vim-R-plugin
 let vimrplugin_applescript = 0
