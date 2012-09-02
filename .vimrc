@@ -1,5 +1,8 @@
 " MJ's .vimrc this is it folks ... yerp
 
+set nocompatible		       " turn off vi compatability
+
+
 " Kick the crutches -- disable arrow keys
     map <up> <nop>
     map <down> <nop>
@@ -156,8 +159,12 @@ map <silent> <LocalLeader>p :call RAction("plot")<CR>
 " i use the defaults, and have no issues with conflicts
 
 " ==>>> vim-indent-guides
-let g:indent_guides_start_level = 3
+let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 30
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=steelblue3   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
 
 " ==>>> Jellybeans - call after Bundle, so it will be found
 color jellybeans                       " set color-scheme to jellybeans
@@ -210,7 +217,6 @@ autocmd BufLeave,FocusLost * silent! wall
 """ ===>>> General Settings
 "set verbose=9                          " turn it on for testing
 set timeout timeoutlen=500             " half a second to complete mapping...
-set nocompatible		       " turn off vi compatability
 set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
 set winaltkeys=no                      " take Alt- back from the GUI
@@ -266,8 +272,8 @@ source ~/vim/alts/abrev.txt            " source abbreviations dictionary
 
 " eat characters after abbreviation
 function! Eatchar(pat)
-        let c = nr2char(getchar(0))
-        return (c =~ a:pat) ? '' : c
+      let c = nr2char(getchar(0))
+      return (c =~ a:pat) ? '' : c
 endfunction
 
 """ <<<===
