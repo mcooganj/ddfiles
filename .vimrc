@@ -132,8 +132,7 @@ let g:ConqueTerm_EscKey = '<C-l>'
 " send current line to terminal, <CR>, and return focus to vim
 nmap <D-F9> V<F9><CR><Esc><C-w>w
 
-
-" Vim-R-plugin
+" Vim-R-plugin - it is possible to make this work with C, but undesirable
 let vimrplugin_applescript = 0
 let vimrplugin_screenplugin = 0
 let vimrplugin_underscore = 0
