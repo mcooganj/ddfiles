@@ -88,8 +88,7 @@ vmap <D-k> [egv
 vmap <D-j> ]egv
 
 " repeat: to add support to a plugin, add its name to the below command
-" silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-" silent! call repeat#set("\<commentary>MyWonderfulMap", v:count)
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " ==>>> commentary - just comment stuff in and out ... that's all
 " `\\\` comments out a line (takes a count), `\\` comments motion (for example, `\\ap` comments out a paragraph).
@@ -298,9 +297,9 @@ map! <C-s> <C-o>:w<CR>
 nmap <C-sx> :w!<cr>
 
 " hate these errors - note, fixing Q == q is dangerous
-:command WQ wq
-:command Wq wq
-:command W w
+:ca WQ wq
+:ca Wq wq
+:ca W w
 
 " Fast edit of .vimrc
 map <leader>e :e! ~/.vimrc<cr>
