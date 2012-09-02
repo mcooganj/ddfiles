@@ -133,8 +133,11 @@ let g:ConqueTerm_EscKey = '<C-l>'
 nmap <D-F9> V<F9><CR><Esc><C-w>w
 
 " Vim-R-plugin - it is possible to make this work with C, but undesirable
+" turning off AS and screen means that R runs in an external X11 terminal.
 let vimrplugin_applescript = 0
 let vimrplugin_screenplugin = 0
+
+" this gets your underscore character back - we prefer <D-1>
 let vimrplugin_underscore = 0
 
 " map <D-1> to <- when editing .r files
