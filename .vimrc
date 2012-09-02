@@ -111,12 +111,16 @@ let g:EasyMotion_leader_key = ';'
 
 " conque plugin
 " open a bash term inside vim: below or to the right
-map! <D-F11> :ConqueTermSplit bash<CR>
-map! <D-F12> :ConqueTermVSplit bash<CR>
+nmap <D-F11> :ConqueTermSplit bash<CR>
+imap <D-F11> <C-o>:ConqueTermSplit bash<CR>
+nmap <D-F12> :ConqueTermVSplit bash<CR>
+imap <D-F12> <C-o>:ConqueTermVSplit bash<CR>
 
 " open an ipython term inside vim: below or to the right
-map! <D-I> :ConqueTermSplit ipython<CR>
-map! <D-i> :ConqueTermVSplit ipython<CR>
+nmap <D-I> :ConqueTermSplit ipython<CR>
+imap <D-I> <C-o>:ConqueTermSplit ipython<CR>
+nmap <D-i> :ConqueTermVSplit ipython<CR>
+imap <D-i> <C-o>:ConqueTermVSplit ipython<CR>
 
 " kill color in vim-terminal (speeds things up)
 let g:ConqueTerm_FastMode = 1
