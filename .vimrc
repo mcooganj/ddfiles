@@ -119,8 +119,10 @@ nmap <D-I> :ConqueTermSplit ipython<CR>
 nmap <D-i> :ConqueTermVSplit ipython<CR>
 
 " kill color in vim-terminal (speeds things up)
-g:ConqueTerm_Color = 0
+let g:ConqueTerm_FastMode = 1
 
+" send current line to terminal
+nmap <D-F9> V<F9>
 
 " Vim-R-plugin
 let vimrplugin_applescript = 0
