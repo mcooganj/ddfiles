@@ -109,10 +109,13 @@ let g:EasyMotion_leader_key = ';'
 " ack-vim - run ack inside vim, show results in a split window
 " :Ack[!] [options] {pattern} [{directory}]
 
-" conque -
-" two maps -- one for opening in a verticle split and another for Horiz
+" conque plugin
+" open a bash term inside vim: below or to the right
 nmap <D-F12> :ConqueTermSplit bash<CR>
 nmap <D-F11> :ConqueTermVSplit bash<CR>
+
+" open an ipython term inside vim: below or to the right
+nmap <D-I> :ConqueTermSplit ipython<CR>
 nmap <D-i> :ConqueTermVSplit ipython<CR>
 
 " kill color in vim-terminal (speeds things up)
