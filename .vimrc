@@ -75,8 +75,8 @@ imap <C-a> <C-o>:Gwrite<CR>
 nmap <C-c> :Gcommit<CR>
 imap <C-c> <C-o>:Gcommit<CR>
 
-nmap <D-)> :Gread<CR>
-imap <D-)> <C-o>:Gread<CR>
+nmap <D-Bslash> :Gread<CR>
+imap <D-Bslash> <C-o>:Gread<CR>
 
 " unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
