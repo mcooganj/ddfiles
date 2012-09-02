@@ -32,6 +32,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
+Bundle 'mileszs/ack.vim.git'
 Bundle 'rson/vim-conque'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
@@ -74,8 +75,8 @@ imap <C-a> <C-o>:Gwrite<CR>
 nmap <C-c> :Gcommit<CR>
 imap <C-c> <C-o>:Gcommit<CR>
 
-nmap <D-0> :Gread<CR>
-imap <D-0> <C-o>:Gread<CR>
+nmap <D-)> :Gread<CR>
+imap <D-)> <C-o>:Gread<CR>
 
 " unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
@@ -100,12 +101,21 @@ vmap <D-j> ]egv
 let g:EasyMotion_leader_key = ';'
 
 " sparkup - used for easier HTML coding: https://github.com/rstacruz/sparkup
-
+" in html use ^E to expand skeleton, and ^N / ^P to glide through slots
 
 " vim-rails - used for ruby on rails web development
 
 
-" conque
+" ack-vim - run ack inside vim, show results in a split window
+" :Ack[!] [options] {pattern} [{directory}]
+
+" conque -
+" two maps -- one for opening in a verticle split and another for Horiz
+nmap <D-0> <c-r>:ConqueTermSplit bash<CR>
+nmap <D-9> <c-r>:ConqueTermVSplit bash<CR>
+
+" kill color in vim-terminal (speeds things up)
+g:ConqueTerm_Color = 0
 
 
 " Vim-R-plugin
@@ -178,6 +188,7 @@ autocmd BufLeave,FocusLost * silent! wall
 
 """ ===>>> General Settings
 "set verbose=9                          " turn it on for testing
+set timeout timeoutlen=500             " half a second to complete mapping...
 set nocompatible		       " turn off vi compatability
 set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
@@ -247,7 +258,7 @@ endfunction
 let g:mapleader = ","
 
 " remap `;.` to <Esc>
-imap .; <Esc>
+imap '; <Esc>
 
 " re-map Omni-Completion to <C-space>
 inoremap <C-space> <C-x><C-o>
