@@ -36,8 +36,7 @@ Bundle 'rson/vim-conque'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
-Bundle 'wincent/Command-T'
-Bundle 'mutewinter/vim-indent-guides'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -151,18 +150,16 @@ map <silent> <LocalLeader>ht :call RAction("RApack::ht")<CR>
 map <silent> <LocalLeader>p :call RAction("plot")<CR>
 
 " ==>>> surround
-
+" my fav is `ysiw <a href="www.rara.com">` which links word under cursor
 
 " ==>>> delimitMate
+" i use the defaults, and have no issues with conflicts
 
+" ==>>> vim-indent-guides
+let g:indent_guides_start_level = 3
+let g:indent_guides_guide_size = 1
 
-" Command-T (causing me headaches)
-
-
-" vim-indent-guides
-
-
-" Jellybeans - if you call jellybeans prior to Bundle, it won't be found
+" ==>>> Jellybeans - call after Bundle, so it will be found
 color jellybeans                       " set color-scheme to jellybeans
 
 " nerdtree
@@ -251,7 +248,7 @@ set wildmode=list:longest,full         " make cmdline tab completion similar to 
 set backspace=2                        " turn on `normal` backspace
 set expandtab		               " expand <Tab>s into <space>s
 set softtabstop=3	               " a tab is worth 3<space>
-set shiftwidth=4	               " an indent is worth 4<space>
+set shiftwidth=3	               " an indent is worth 4<space>
 set showmatch                          " show matching paren
 set matchtime=1                        " 1/10th sec to find matching paren
 set nowrap                             " don't wrap-for me
