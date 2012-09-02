@@ -141,6 +141,16 @@ let vimrplugin_underscore = 0
 " map <D-1> to <- when editing .r files
 autocmd FileType r inoremap <buffer> <D-1> <space><-<space>
 
+" show help docs in vertical split - if possible
+let vimrplugin_vimpager = "vertical"
+
+" each Vim instance call own R session (and why not, R doesn't thread)
+let vimrplugin_by_vim_instance = 1
+
+" `\ht` calls my custom function ht() on the object 'neath cursor
+map <silent> <LocalLeader>ht :call RAction("RApack::ht")<CR>
+map <silent> <LocalLeader>p :call RAction("plot")<CR>
+
 " ==>>> surround
 
 
@@ -286,6 +296,11 @@ map! <C-s> <C-o>:w<CR>
 
 " for those stubborn occasions
 nmap <C-sx> :w!<cr>
+
+" hate these errors - note, fixing Q == q is dangerous
+:command WQ wq
+:command Wq wq
+:command W w
 
 " Fast edit of .vimrc
 map <leader>e :e! ~/.vimrc<cr>
