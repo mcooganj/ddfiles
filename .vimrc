@@ -1,8 +1,18 @@
 " MJ's .vimrc this is it folks ... yerp
 
+
+" Kick the crutches -- disable arrow keys
+    map <up> <nop>
+    map <down> <nop>
+    map <left> <nop>
+    map <right> <nop>
+    imap <up> <nop>
+    imap <down> <nop>
+    imap <left> <nop>
+    imap <right> <nop>
+
 " Bundles with vundle
 " NOTE: comments after Bundle command are not allowed..
-
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -22,7 +32,6 @@ Bundle 'tpope/vim-commentary'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
-Bundle 'ervandew/screen'
 Bundle 'rson/vim-conque'
 Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
@@ -70,36 +79,34 @@ imap <D-0> <C-o>:Gread<CR>
 
 " unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
-" Bubble single lines
-nmap <D-Up> [e
-nmap <D-Down> ]e
+" Bubble single lines - select text in visual mode and shift it about
+nmap <D-k> [e
+nmap <D-j> ]e
 
-" Bubble multiple lines
-vmap <D-Up> [egv
-vmap <D-Down> ]egv
+" Bubble multiple lines - again, select text in visual mode and shift it
+vmap <D-k> [egv
+vmap <D-j> ]egv
 
 " repeat: to add support to a plugin, add its name to the below command
 " silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-silent! call repeat#set("\<commentary>MyWonderfulMap", v:count)
+" silent! call repeat#set("\<commentary>MyWonderfulMap", v:count)
 
-" commentary
-" \\\ comments out a line (takes a count), \\ comments motion (for example, \\ap comments out a paragraph).
-" \\ in visual mode comments out selection.
-" this is it
+" commentary - just comment stuff in and out ... that's all
+" `\\\` comments out a line (takes a count), `\\` comments motion (for example, `\\ap` comments out a paragraph).
+" `\\` in visual mode comments out selection.
 
-" easymotion
+" easymotion - map the easymotion leader is `;` so `;;w` executes word-search
+" see `:h easymotion-default-mappings` for deets, but most vimKeys ==> emKeys
+let g:EasyMotion_leader_key = ';'
 
-
-" sparkup
-
-
-" vim-rails
+" sparkup - used for easier HTML coding: https://github.com/rstacruz/sparkup
 
 
-" screen
+" vim-rails - used for ruby on rails web development
 
 
 " conque
+
 
 " Vim-R-plugin
 let vimrplugin_applescript = 0
@@ -163,7 +170,8 @@ autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
 " Remove trailing whitespace from the end of the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 
-" Open each buffer in its own tab
+" Autosave when a buffer loses focus
+autocmd BufLeave,FocusLost * silent! wall
 
 """ <<<===
 
@@ -235,14 +243,20 @@ endfunction
 
 """ ===>>> Mappings
 
+" set leader to `,`
+let g:mapleader = ","
+
+" remap `;.` to <Esc>
+imap .; <Esc>
+
 " re-map Omni-Completion to <C-space>
 inoremap <C-space> <C-x><C-o>
 
 " Saving: re-mapped to ^s[x]
 
-" ^s saves in normal mode
-nmap <leader>w :w<cr>
-imap <C-w> <C-o>:w<CR>
+" ^s saves in both normal and insert modes, leader-s in normal mode
+nmap <leader>s :w<cr>
+map! <C-s> <C-o>:w<CR>
 
 " for those stubborn occasions
 nmap <C-sx> :w!<cr>
