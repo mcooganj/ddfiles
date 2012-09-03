@@ -149,6 +149,8 @@ let vimrplugin_vimpager = "vertical"
 let vimrplugin_by_vim_instance = 1
 
 " `\ht` calls my custom function ht() on the object 'neath cursor
+map <silent> <LocalLeader>hh :call RAction("head")<CR>
+map <silent> <LocalLeader>tt :call RAction("tail")<CR>
 map <silent> <LocalLeader>ht :call RAction("RApack::ht")<CR>
 map <silent> <LocalLeader>pl :call RAction("plot")<CR>
 map <silent> <LocalLeader>st :call RAction("str")<CR>
