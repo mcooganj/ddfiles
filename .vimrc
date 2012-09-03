@@ -150,7 +150,8 @@ let vimrplugin_by_vim_instance = 1
 
 " `\ht` calls my custom function ht() on the object 'neath cursor
 map <silent> <LocalLeader>ht :call RAction("RApack::ht")<CR>
-map <silent> <LocalLeader>p :call RAction("plot")<CR>
+map <silent> <LocalLeader>pl :call RAction("plot")<CR>
+map <silent> <LocalLeader>st :call RAction("str")<CR>
 
 " ==>>> surround
 " my fav is `ysiw <a href="www.rara.com">` which links word under cursor
