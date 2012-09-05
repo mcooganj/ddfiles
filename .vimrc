@@ -4,14 +4,14 @@ set nocompatible		       " turn off vi compatability
 
 
 " Kick the crutches -- disable arrow keys
-    map <up> <nop>
-    map <down> <nop>
-    map <left> <nop>
-    map <right> <nop>
-    imap <up> <nop>
-    imap <down> <nop>
-    imap <left> <nop>
-    imap <right> <nop>
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " Bundles with vundle
 " NOTE: comments on same line as Bundle commands cause errors
@@ -172,7 +172,8 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
 " ==>>> Jellybeans - call after Bundle, so it will be found
 color jellybeans                       " set color-scheme to jellybeans
 
-" nerdtree
+" ==>>> nerdtree
+" open NT with F2
 nmap <F2> :NERDTreeToggle<CR>
 
 
@@ -288,8 +289,12 @@ endfunction
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
+" change tabs with arrow keys
+nmap <D-]> :tabn<cr>
+nmap <D-[> :tabp<cr>
+
 " remap `;.` to <Esc>
-imap '; <Esc>
+" imap '; <Esc>
 
 " re-map Omni-Completion to <C-space>
 inoremap <C-space> <C-x><C-o>
