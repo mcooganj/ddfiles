@@ -42,8 +42,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'vim-scripts/taglist.vim'
+Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
 Bundle 'vim-scripts/Gundo'
 Bundle 'kevinw/pyflakes-vim'
@@ -129,7 +128,7 @@ let g:ConqueTerm_Color = 0
 let g:ConqueTerm_EscKey = '<C-l>'
 
 " send current line to terminal, <CR>, and return focus to vim
-nmap <D-F9> V<F9><CR><Esc><C-w>w
+nmap <D-F9> V<F9><CR><C-l><C-w>w
 
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " turning off AS and screen means that R runs in an external X11 terminal.
@@ -161,7 +160,8 @@ map <silent> <LocalLeader>st :call RAction("str")<CR>
 " ==>>> delimitMate
 " i use the defaults, and have no issues with conflicts
 
-" ==>>> vim-indent-guides
+" ==>>> vim-indent-guides -- toggle with <D-Alt-G>
+nmap <D-©> :IndentGuidesToggle<CR>
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 30
@@ -175,11 +175,6 @@ color jellybeans                       " set color-scheme to jellybeans
 " ==>>> nerdtree
 " open NT with F2
 nmap <F2> :NERDTreeToggle<CR>
-
-
-
-" nerdcommenter
-
 
 " taglist
 "
@@ -231,7 +226,8 @@ endif
 
 """ ===>>> General Settings
 "set verbose=9                         " turn it on for testing
-set timeout timeoutlen=500             " half a second to complete mapping...
+set timeoutlen=1500                    " 1 1/2 seconds to complete mapping...
+set ttimeoutlen=50                     " faster <esc>
 set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
 set winaltkeys=no                      " take Alt- back from the GUI
@@ -241,7 +237,7 @@ set autowrite                          " save a buffer when you leave it
 set bg=dark                            " set background to dark
 set switchbuf=usetab,newtab            " switch to the existing tab if already open, new if not.
 set laststatus=2                       " always show last line
-
+set cursorline                         " highlight current line
 
 " the good stuff
 set ofu=syntaxcomplete#Complete        " turn on Omni Completion
@@ -288,7 +284,7 @@ set directory=~/.vim/tmp               " the temp dir (also must be made)
 
 source ~/vim/alts/abrev.txt            " source abbreviations dictionary
 
-" eat characters after abbreviation
+" eat characters after abbreviation this is
 function! Eatchar(pat)
       let c = nr2char(getchar(0))
       return (c =~ a:pat) ? '' : c
@@ -302,7 +298,7 @@ endfunction
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
-" change tabs with arrow keys
+" change tabs - takes a number
 nmap <D-]> gt
 nmap <D-[> gT
 
