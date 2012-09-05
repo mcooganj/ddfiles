@@ -218,9 +218,19 @@ autocmd BufLeave,FocusLost * silent! wall
 
 """ <<<===
 
+" from tim pope's .vimrc    https://github.com/tpope/tpope/blob/master/.vimrc
+if has("eval")
+function! SL(function)
+  if exists('*'.a:function)
+    return call(a:function,[])
+  else
+    return ''
+  endif
+endfunction
+endif
 
 """ ===>>> General Settings
-"set verbose=9                          " turn it on for testing
+"set verbose=9                         " turn it on for testing
 set timeout timeoutlen=500             " half a second to complete mapping...
 set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
@@ -229,7 +239,8 @@ set autowrite                          " save a buffer when you leave it
 
 " appearance -
 set bg=dark                            " set background to dark
-set switchbuf=usetab,newtab           " switch to the existing tab if already open, new if not.
+set switchbuf=usetab,newtab            " switch to the existing tab if already open, new if not.
+set laststatus=2                       " always show last line
 
 
 " the good stuff
@@ -247,6 +258,10 @@ set hlsearch			       " highlight what we find
 set incsearch			       " snap to partial matches as `/string` is typed
 set showmatch                          " show matching paren
 set matchtime=1                        " spend < 1/10th of a sec finding matching paren
+set ignorecase                         " default is to look across cases
+set smartcase                          " except when search string incl UPPERS
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+
 
 set showcmd		               " show command as you type
 
@@ -260,8 +275,6 @@ set backspace=2                        " turn on `normal` backspace
 set expandtab		               " expand <Tab>s into <space>s
 set softtabstop=3	               " a tab is worth 3<space>
 set shiftwidth=3	               " an indent is worth 4<space>
-set showmatch                          " show matching paren
-set matchtime=1                        " 1/10th sec to find matching paren
 set nowrap                             " don't wrap-for me
 
 " keep my backups cleaned-up
@@ -290,8 +303,8 @@ endfunction
 let g:mapleader = ","
 
 " change tabs with arrow keys
-nmap <D-]> :tabn<cr>
-nmap <D-[> :tabp<cr>
+nmap <D-]> gt
+nmap <D-[> gT
 
 " remap `;.` to <Esc>
 " imap '; <Esc>
