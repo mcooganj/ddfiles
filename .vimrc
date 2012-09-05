@@ -76,8 +76,8 @@ imap <C-a> <C-o>:Gwrite<CR>
 nmap <C-c> :Gcommit<CR>
 imap <C-c> <C-o>:Gcommit<CR>
 
-nmap <D-Bslash> :Gread<CR>
-imap <D-Bslash> <C-o>:Gread<CR>
+nmap <D-F1> :Gread<CR>
+imap <D-F1> <C-o>:Gread<CR>
 
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
@@ -173,6 +173,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
 color jellybeans                       " set color-scheme to jellybeans
 
 " nerdtree
+nmap <F2> :NERDTreeToggle<CR>
 
 
 
@@ -297,10 +298,8 @@ inoremap <C-space> <C-x><C-o>
 
 " ^s saves in both normal and insert modes, leader-s in normal mode
 nmap <leader>s :w<cr>
-map! <C-s> <C-o>:w<CR>
-
-" for those stubborn occasions
-nmap <C-sx> :w!<cr>
+imap <C-s> <C-o>:w<CR>
+nmap <C-s> :w!<cr>
 
 " hate these errors - note, fixing Q == q is dangerous
 :ca WQ wq
@@ -317,4 +316,5 @@ map <leader>qw :q!<cr>
 nmap gV `[v`]
 
 """ <<<===
+
 
