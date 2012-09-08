@@ -303,7 +303,7 @@ nmap <D-]> gt
 nmap <D-[> gT
 
 " remap `;.` to <Esc>
-imap '; <Esc>
+" imap '; <Esc>
 
 " re-map Omni-Completion to <C-space>
 inoremap <C-space> <C-x><C-o>
