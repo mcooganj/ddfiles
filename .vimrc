@@ -321,7 +321,7 @@ nmap <C-s> :w!<cr>
 :ca W w
 
 " Fast edit of .vimrc
-map <leader>e :e! ~/.vimrc<cr>
+map <leader>e :e! ~/dotfiles/.vimrc<cr>
 
 " Fast exit of vim
 map <leader>qw :q!<cr>
