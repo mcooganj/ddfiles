@@ -128,7 +128,7 @@ let g:ConqueTerm_Color = 0
 let g:ConqueTerm_EscKey = '<C-l>'
 
 " send current line to terminal, <CR>, and return focus to vim
-nmap <D-F9> V<F9><CR><C-l><C-w>w
+nmap <D-F9> V<F9><CR><C-l><C-w>p
 
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " turning off AS and screen means that R runs in an external X11 terminal.
@@ -176,8 +176,9 @@ color jellybeans                       " set color-scheme to jellybeans
 " open NT with F2
 nmap <F2> :NERDTreeToggle<CR>
 
-" taglist
-"
+" taglist: see http://mattpolito.info/post/1648956809/ctags-got-you-down
+" brew install ctags
+" sudo mv /usr/bin/ctags /usr/bin/ctags_orig
 "
 " vimpdb
 "
@@ -282,7 +283,7 @@ set directory=~/.vim/tmp               " the temp dir (also must be made)
 
 """ ===>>> abbreviations
 
-source ~/vim/alts/abrev.txt            " source abbreviations dictionary
+source ~/vim/alts/abrev.vim            " source abbreviations dictionary
 
 " eat characters after abbreviation this is
 function! Eatchar(pat)
