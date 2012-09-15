@@ -179,7 +179,10 @@ nmap <F2> :NERDTreeToggle<CR>
 " taglist: see http://mattpolito.info/post/1648956809/ctags-got-you-down
 " brew install ctags
 " sudo mv /usr/bin/ctags /usr/bin/ctags_orig
-"
+" go to a directory (say ~/Py/) and $ ctags -R .
+" then :set tags+=/Users/mcooganj/Py/tags
+nmap <F3> :TlistToggle<CR>
+
 " vimpdb
 "
 "
