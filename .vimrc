@@ -45,7 +45,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
 Bundle 'sjl/Gundo'
-Bundle 'kevinw/pyflakes-vim'
+Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/pep8'
 Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'docunext/closetag.vim'
@@ -195,8 +195,12 @@ nnoremap <D-F4> :TlistAddFiles %:p:h/*.*<CR>
 " Vimcast -- http://vimcasts.org/episodes/undo-branching-and-gundo-vim/
 " mapped to <D-¨> ->> D-alt-u
 nnoremap <D-¨> :GundoToggle<CR>
+let g:gundo_right = 1
 "
-" pyflakes
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 "
 "
 " pep8
