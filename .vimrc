@@ -184,6 +184,7 @@ nmap <F2> :NERDTreeToggle<CR>
 nnoremap <silent> <F3> :TlistToggle<CR>
 let g:Tlist_GainFocus_On_ToggleOpen=1
 nnoremap <D-F4> :TlistAddFiles %:p:h *.*<CR>
+nnoremap <D-F3> :TlistAddFiles %:p:h *.*<CR>
 
 " vimpdb
 "
@@ -238,6 +239,7 @@ set noerrorbells                       " turn off error bells
 set visualbell                         " turn on visual error-bell
 set winaltkeys=no                      " take Alt- back from the GUI
 set autowrite                          " save a buffer when you leave it
+set autochdir                          " cd to dir containing file in buffer
 
 " appearance -
 set bg=dark                            " set background to dark
