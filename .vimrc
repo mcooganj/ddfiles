@@ -183,8 +183,8 @@ nmap <F2> :NERDTreeToggle<CR>
 " then :set tags+=/Users/mcooganj/Py/tags
 nnoremap <silent> <F3> :TlistToggle<CR>
 let g:Tlist_GainFocus_On_ToggleOpen=1
-nnoremap <D-F4> :TlistAddFiles %:p:h *.*<CR>
-nnoremap <D-F3> :TlistAddFiles %:p:h *.*<CR>
+nnoremap <D-F3> :TlistAddFiles %:p:h/*.%:e<CR>
+nnoremap <D-F4> :TlistAddFiles %:p:h/*.*<CR>
 
 " vimpdb
 "
