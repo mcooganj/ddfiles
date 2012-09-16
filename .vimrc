@@ -46,7 +46,7 @@ Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
 Bundle 'sjl/Gundo'
 Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/flake8'
+Bundle 'vim-scripts/vim-flake8'
 Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'docunext/closetag.vim'
 
@@ -200,7 +200,8 @@ let g:gundo_right = 1
 " syntastic
 let g:syntastic_check_on_open=1
 "
-" pep8
+" vim-flake8
+" $ sudo pip install flake8
 "
 "
 " LaTeX-Box
