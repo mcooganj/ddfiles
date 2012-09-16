@@ -198,10 +198,7 @@ nnoremap <D-¨> :GundoToggle<CR>
 let g:gundo_right = 1
 "
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-"
+let g:syntastic_check_on_open=1
 "
 " pep8
 "
