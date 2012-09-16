@@ -46,7 +46,7 @@ Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
 Bundle 'sjl/Gundo'
 Bundle 'scrooloose/syntastic'
-Bundle 'vim-scripts/pep8'
+Bundle 'vim-scripts/flake8'
 Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'docunext/closetag.vim'
 
