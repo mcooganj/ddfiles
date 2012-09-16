@@ -44,7 +44,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
-Bundle 'vim-scripts/Gundo'
+Bundle 'sjl/Gundo'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'vim-scripts/pep8'
 Bundle 'vim-scripts/LaTeX-Box'
@@ -188,10 +188,13 @@ nnoremap <D-F3> :TlistAddFiles %:p:h/*.%:e<CR>
 nnoremap <D-F4> :TlistAddFiles %:p:h/*.*<CR>
 
 " vimpdb
+" $ sudo pip install vimpdb
+" this isn't working ... have logged an error
 "
-"
-" Gundo
-"
+" Gundo -- http://sjl.bitbucket.org/gundo.vim/
+" Vimcast -- http://vimcasts.org/episodes/undo-branching-and-gundo-vim/
+" mapped to <D-¨> ->> D-alt-u
+nnoremap <D-¨> :GundoToggle<CR>
 "
 " pyflakes
 "
@@ -211,7 +214,9 @@ autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
 """ ===>>> Auto Commands
 
 " Automatically cd into the directory that the file is in
-"autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+if strpart(expand("%:p:h"), 0, 16) == "/Users/mcooganj/"
+   autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
+endif
 
 " Remove trailing whitespace from the end of the file
 autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
@@ -332,5 +337,8 @@ map <leader>qw :q!<cr>
 nmap gV `[v`]
 
 """ <<<===
+
+""" ===>>> misc stuff
+" http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
 
 
