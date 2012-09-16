@@ -307,13 +307,6 @@ endfunction
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
-" change tabs - takes a number
-nmap <D-]> gt
-nmap <D-[> gT
-
-" remap `;.` to <Esc>
-" imap '; <Esc>
-
 " re-map Omni-Completion to <C-space>
 inoremap <C-space> <C-x><C-o>
 
