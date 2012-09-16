@@ -202,6 +202,7 @@ let g:syntastic_check_on_open=1
 "
 " vim-flake8
 " $ sudo pip install flake8
+autocmd FileType python map <buffer> <D-8> :call Flake8()<CR>
 "
 "
 " LaTeX-Box
