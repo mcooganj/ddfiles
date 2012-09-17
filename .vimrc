@@ -48,7 +48,6 @@ Bundle 'sjl/Gundo'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/vim-flake8'
 Bundle 'vim-scripts/LaTeX-Box'
-Bundle 'docunext/closetag.vim'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -176,7 +175,7 @@ color jellybeans                       " set color-scheme to jellybeans
 " open NT with F2
 nmap <F2> :NERDTreeToggle<CR>
 
-" taglist: see http://mattpolito.info/post/1648956809/ctags-got-you-down
+" ==>>> taglist: see http://mattpolito.info/post/1648956809/ctags-got-you-down
 " brew install ctags
 " sudo mv /usr/bin/ctags /usr/bin/ctags_orig
 " go to a directory (say ~/Py/) and $ ctags -R .
@@ -187,34 +186,36 @@ let g:Tlist_GainFocus_On_ToggleOpen=1
 nnoremap <D-F3> :TlistAddFiles %:p:h/*.%:e<CR>
 nnoremap <D-F4> :TlistAddFiles %:p:h/*.*<CR>
 
-" vimpdb
+" ==>>> vimpdb
 " $ sudo pip install vimpdb
 " this isn't working ... have logged an error
 "
-" Gundo -- http://sjl.bitbucket.org/gundo.vim/
+" ==>>> Gundo -- http://sjl.bitbucket.org/gundo.vim/
 " Vimcast -- http://vimcasts.org/episodes/undo-branching-and-gundo-vim/
 " mapped to <D-¨> ->> D-alt-u
 nnoremap <D-¨> :GundoToggle<CR>
 let g:gundo_right = 1
 "
-" syntastic
-let g:syntastic_check_on_open=1
+" ==>>> syntastic
+let g:syntastic_check_on_open=0
+let g:syntastic_mode_map = { 'mode': 'active',
+                               \ 'active_filetypes': ['python', 'tex'],
+                               \ 'passive_filetypes': ['php'] }
 "
-" vim-flake8
+" ==>>> vim-flake8
 " $ sudo pip install flake8
+" set max line lenght before warning to 99char
+let g:flake8_max_line_length=99
+" re-map <D-8> so that it calls flake-8
 autocmd FileType python map <buffer> <D-8> :call Flake8()<CR>
+" run flake8 each time a .py file is saved
+autocmd BufWritePost *.py call Flake8()
 "
-"
-" LaTeX-Box
-"
-"
-" closetag
+" ==>>> LaTeX-Box
+" $ sudo pip install psutil
+" note: default mappings are in ~/.vim/ftplugin/tex.vim:
 
-" example Python inoremap i made for testing <buffer> maps
-autocmd FileType python inoremap <buffer> <D-1> <space>==<space>
-" MJ's .vimrc this is it folks ... yerp
-
-""" ===>>> Auto Commands
+""" ===>>> Auto Commands {{{
 
 " Automatically cd into the directory that the file is in
 if strpart(expand("%:p:h"), 0, 16) == "/Users/mcooganj/"
@@ -227,7 +228,7 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Autosave when a buffer loses focus
 autocmd BufLeave,FocusLost * silent! wall
 
-""" <<<===
+""" <<<=== }}}
 
 " from tim pope's .vimrc    https://github.com/tpope/tpope/blob/master/.vimrc
 if has("eval")
