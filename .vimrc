@@ -1,6 +1,7 @@
 " MJ's .vimrc this is it folks ... yerp
 
 set nocompatible		       " turn off vi compatability
+set wrapmargin
 
 
 " Kick the crutches -- disable arrow keys
