@@ -313,10 +313,14 @@ endfunction
 
 """ ===>>> Mappings
 
+" better escape
+inoremap ;' <esc>
+
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
-" re-map Omni-Completion to <C-space>
+" Faster Completion
+inoremap <tab> <C-N>
 inoremap <C-space> <C-x><C-o>
 
 " Saving: re-mapped to ^s[x]
