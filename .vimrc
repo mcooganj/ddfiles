@@ -300,7 +300,7 @@ set directory=~/.vim/tmp               " the temp dir (also must be made)
 
 """ ===>>> abbreviations
 
-source ~/vim/alts/abrev.vim            " source abbreviations dictionary
+source ~/vimHelpers/alts/abrev.vim            " source abbreviations dictionary
 
 " eat characters after abbreviation this is
 function! Eatchar(pat)
@@ -333,6 +333,7 @@ nmap <C-s> :w!<cr>
 
 " Fast edit of .vimrc
 map <leader>e :e! ~/dotfiles/.vimrc<cr>
+map <leader>R :e! ~/dotfiles/.Rprofile<cr>
 
 " Fast exit of vim
 map <leader>qw :q!<cr>
