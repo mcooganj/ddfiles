@@ -314,7 +314,7 @@ endfunction
 """ ===>>> Mappings
 
 " better escape
-inoremap ;' <esc>
+inoremap '; <esc>
 
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
