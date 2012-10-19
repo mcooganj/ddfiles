@@ -3,11 +3,13 @@
 # refreshing - required to make changes take effect
 
 # 1/ $ source ~/.bash_profile
-# 2/ $ . ~/.bash_profile 
+# 2/ $ . ~/.bash_profile
 
 # alias' ...
 alias l='ls -lah'
 alias h='cd ~/'
+alias d='cd ~/data/'
+alias rrd='cd /Users/mcooganj/R/'
 alias rwd='cd /Users/mcooganj/R/wd/'
 
 # Setting PATH for Python 2.7
