@@ -165,8 +165,8 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 30
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=steelblue3   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=dimgrey   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
 
 " ==>>> tomorrow-night - call after Bundle, so it will be found
 colorscheme Tomorrow-Night-Bright                       " set color-scheme to TNB
