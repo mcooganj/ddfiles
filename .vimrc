@@ -40,7 +40,7 @@ Bundle 'vim-scripts/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'nanotech/jellybeans.vim'
+Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'scrooloose/nerdtree'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
@@ -168,8 +168,8 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=steelblue3   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
 
-" ==>>> Jellybeans - call after Bundle, so it will be found
-color jellybeans                       " set color-scheme to jellybeans
+" ==>>> tomorrow-night - call after Bundle, so it will be found
+colorscheme Tomorrow-Night                       " set color-scheme to jellybeans
 
 " ==>>> nerdtree
 " open NT with F2
