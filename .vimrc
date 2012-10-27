@@ -169,7 +169,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=steelblue3   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=ivory3   ctermbg=4
 
 " ==>>> tomorrow-night - call after Bundle, so it will be found
-colorscheme Tomorrow-Night                       " set color-scheme to jellybeans
+colorscheme Tomorrow-Night-Bright                       " set color-scheme to TNB
 
 " ==>>> nerdtree
 " open NT with F2
