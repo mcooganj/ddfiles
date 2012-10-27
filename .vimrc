@@ -288,7 +288,7 @@ set wildmode=list:longest,full         " make cmdline tab completion similar to 
 set backspace=2                        " turn on `normal` backspace
 set expandtab		               " expand <Tab>s into <space>s
 set softtabstop=3	               " a tab is worth 3<space>
-set shiftwidth=3	               " an indent is worth 4<space>
+set shiftwidth=3	               " an indent is worth 3<space>
 set nowrap                             " don't wrap-for me
 
 " keep my backups cleaned-up
