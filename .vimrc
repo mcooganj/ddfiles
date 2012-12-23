@@ -48,6 +48,7 @@ Bundle 'vim-scripts/Gundo'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/vim-flake8'
 Bundle 'vim-scripts/LaTeX-Box'
+Bundle 'jpalardy/vim-slime'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -68,7 +69,7 @@ Bundle 'git://git.wincent.com/command-t.git'
 """ ===>>> The plugs
 
 " ==>>> fugitive -- http://vimcasts.org/blog/2011/05/the-fugitive-series/
-nmap <C-a> :Gwrite<CR>
+nmap <C-> :Gwrite<CR>
 imap <C-a> <C-o>:Gwrite<CR>
 
 nmap <C-c> :Gcommit<CR>
@@ -214,6 +215,9 @@ autocmd BufWritePost *.py call Flake8()
 " ==>>> LaTeX-Box
 " $ sudo pip install psutil
 " note: default mappings are in ~/.vim/ftplugin/tex.vim:
+"
+" ==>>> vim-slime
+let g:slime_target = 'screen' " sets target as GNU screen
 
 """ ===>>> Auto Commands {{{
 
@@ -260,6 +264,7 @@ set cursorline                         " highlight current line
 " the good stuff
 set ofu=syntaxcomplete#Complete        " turn on Omni Completion
 filetype plugin indent on	       " detect filetype and load plugin
+set smartindent
 syntax enable			       " highlight syntax: use 'enable' -- not 'on'
 
 " signposts
@@ -287,8 +292,8 @@ set wildmode=list:longest,full         " make cmdline tab completion similar to 
 " formatting tweaks
 set backspace=2                        " turn on `normal` backspace
 set expandtab		               " expand <Tab>s into <space>s
-set softtabstop=3	               " a tab is worth 3<space>
-set shiftwidth=3	               " an indent is worth 3<space>
+set softtabstop=4	               " a tab is worth 4<space>
+set shiftwidth=4	               " an indent is worth 4<space>
 set nowrap                             " don't wrap-for me
 
 " keep my backups cleaned-up
