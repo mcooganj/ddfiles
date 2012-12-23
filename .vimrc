@@ -36,7 +36,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'rson/vim-conque'
-Bundle 'vim-scripts/Vim-R-plugin'
+Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 Bundle 'nathanaelkane/vim-indent-guides'
@@ -69,14 +69,16 @@ Bundle 'git://git.wincent.com/command-t.git'
 """ ===>>> The plugs
 
 " ==>>> fugitive -- http://vimcasts.org/blog/2011/05/the-fugitive-series/
-nmap <C-> :Gwrite<CR>
-imap <C-a> <C-o>:Gwrite<CR>
+" turn off <C-g> and then use it for git commands
+map <C-g> <Nop>
+nmap <C-g>a :Gwrite<CR>
+imap <C-g>a <C-o>:Gwrite<CR>
 
-nmap <C-c> :Gcommit<CR>
-imap <C-c> <C-o>:Gcommit<CR>
+nmap <C-g>c :Gcommit<CR>
+imap <C-g>c <C-o>:Gcommit<CR>
 
-nmap <D-F1> :Gread<CR>
-imap <D-F1> <C-o>:Gread<CR>
+nmap <C-g>r :Gread<CR>
+imap <C-g>r <C-o>:Gread<CR>
 
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
@@ -135,7 +137,7 @@ nmap <D-F9> V<F9><CR><C-l><C-w>p
 let vimrplugin_applescript = 0
 let vimrplugin_screenplugin = 0
 
-" this gets your underscore character back - we prefer <D-1>
+" this gets your underscore character back - i prefer <D-1>
 let vimrplugin_underscore = 0
 
 " map <D-1> to <- when editing .r files
