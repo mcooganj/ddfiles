@@ -14,7 +14,8 @@ alias rwd='cd /Users/mcooganj/R/wd/'
 
 # Setting PATH for Python 2.7
 # The orginal version is saved in .bash_profile.pysave
-PATH="/usr/local/Cellar/python/2.7.3/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+# export PATH=/usr/local/bin:$PATH
+PATH=/usr/local/share/python:$PATH
 export PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

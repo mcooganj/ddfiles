@@ -15,7 +15,7 @@ require(fastmatch)
 require(RApack)
 
 if (interactive()){
-  library(colorout)
+  # library(colorout)
   library(setwidth)
   library(vimcom)
 }
