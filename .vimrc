@@ -134,8 +134,8 @@ nnoremap <D-F9> V<F9><CR><C-l><C-w>p
 
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " this gets your underscore character back - i prefer <M-1>
-let vimrplugin_screenplugin = 0
-let vimrplugin_applescript = 0
+" let vimrplugin_screenplugin = 0
+" let vimrplugin_applescript = 0
 let vimrplugin_underscore = 0
 
 " map <M-1> to <- when editing .r files
@@ -237,6 +237,9 @@ autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
 " Autosave when a buffer loses focus
 autocmd BufLeave,FocusLost * silent! wall
 
+" pass *.xml files through the lint checker
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
 """ <<<=== }}}
 
 " from tim pope's .vimrc    https://github.com/tpope/tpope/blob/master/.vimrc
@@ -310,7 +313,7 @@ set directory=~/.vim/tmp               " the temp dir (also must be made)
 
 """ ===>>> abbreviations
 
-source ~/vimHelpers/alts/abrev.vim            " source abbreviations dictionary
+source ~/.vim/vimHelpers/alts/abrev.vim            " source abbreviations dictionary
 
 " eat characters after abbreviation this is
 function! Eatchar(pat)
@@ -361,4 +364,4 @@ nnoremap gV `[v`]
 " http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
 
 " ==>>> tomorrow-night - set this last!
-colorscheme Tomorrow-Night-Bright                       " set color-scheme to TNB
+colorscheme Tomorrow-Night                       " set color-scheme to TNB
