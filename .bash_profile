@@ -5,6 +5,8 @@
 # 1/ $ source ~/.bash_profile
 # 2/ $ . ~/.bash_profile
 
+export EDITOR=vi
+
 # alias' ...
 alias l='ls -lah'
 alias h='cd ~/'

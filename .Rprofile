@@ -4,7 +4,6 @@
 r <- getOption("repos")
 r["CRAN"] <- "http://cran.ma.imperial.ac.uk"
 options(repos = r)
-rm(r)
 
 setwd("/Users/mcooganj/R/wd/")
 .libPaths("/Users/mcooganj/R/wd/raRpackages/")
