@@ -152,9 +152,15 @@ noremap <silent> <LocalLeader>hh :call RAction("head")<CR>
 noremap <silent> <LocalLeader>tt :call RAction("tail")<CR>
 noremap <silent> <LocalLeader>ht :call RAction("RApack::ht")<CR>
 noremap <silent> <LocalLeader>pl :call RAction("plot")<CR>
+noremap <silent> <LocalLeader>pz :call RAction("plot.zoo")<CR>
 noremap <silent> <LocalLeader>st :call RAction("str")<CR>
 noremap <silent> <LocalLeader>sm :call RAction("summary")<CR>
 noremap <silent> <LocalLeader>dm :call RAction("dim")<CR>
+noremap <silent> <LocalLeader>rm :call RAction("rm")<CR>
+noremap <silent> <LocalLeader>mm :call RAction("mode")<CR>
+noremap <silent> <LocalLeader>cc :call RAction("class")<CR>
+noremap <silent> <LocalLeader>nm :call RAction("names")<CR>
+noremap <silent> <LocalLeader>pr :call RAction("print")<CR>
 
 " ==>>> surround
 " my fav is `ysiw <a href="www.rara.com">` which links word under cursor
@@ -303,6 +309,7 @@ set expandtab		               " expand <Tab>s into <space>s
 set softtabstop=4	               " a tab is worth 4<space>
 set shiftwidth=4	               " an indent is worth 4<space>
 set nowrap                             " don't wrap-for me
+set foldmethod=marker                  " fold with {{{ , }}}
 
 " keep my backups cleaned-up
 set backup                             " Activate backup stuff

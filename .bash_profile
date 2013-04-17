@@ -5,7 +5,7 @@
 # 1/ $ source ~/.bash_profile
 # 2/ $ . ~/.bash_profile
 
-export EDITOR=vi
+export EDITOR=vim
 
 # alias' ...
 alias l='ls -lah'
