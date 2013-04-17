@@ -1,4 +1,5 @@
 # Matt Johnson's .Rprofile
+source('~/R/Rhelpers/helperFuncts.r')
 
 # hard code the UK repo for CRAN
 r <- getOption("repos")
