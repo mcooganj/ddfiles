@@ -349,6 +349,9 @@ nnoremap <leader>s :w<cr>
 inoremap <C-s> <C-o>:w<CR>
 nnoremap <C-s> :w!<cr>
 
+" ^s saves in both normal and insert modes, leader-s in normal mode
+nnoremap E ea
+
 " hate these errors - note, fixing Q == q is dangerous
 :ca WQ wq
 :ca Wq wq
