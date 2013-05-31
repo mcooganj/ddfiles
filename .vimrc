@@ -304,6 +304,7 @@ set wildmode=list:longest,full         " make cmdline tab completion similar to 
 
 
 " formatting tweaks
+set textwidth=100
 set backspace=2                        " turn on `normal` backspace
 set expandtab		               " expand <Tab>s into <space>s
 set softtabstop=4	               " a tab is worth 4<space>
@@ -349,7 +350,7 @@ nnoremap <leader>s :w<cr>
 inoremap <C-s> <C-o>:w<CR>
 nnoremap <C-s> :w!<cr>
 
-" ^s saves in both normal and insert modes, leader-s in normal mode
+" normal mode map
 nnoremap E ea
 
 " hate these errors - note, fixing Q == q is dangerous
@@ -357,10 +358,11 @@ nnoremap E ea
 :ca Wq wq
 :ca W w
 
-" Fast edit of .vimrc
-noremap <leader>e :e ~/dotfiles/.vimrc<cr>
-noremap <leader>sv :source ~/dotfiles/.vimrc<cr>
-noremap <leader>R :e ~/dotfiles/.Rprofile<cr>
+" Fast edit of key vim files
+noremap <leader>e :tabe ~/dotfiles/.vimrc<cr>
+noremap <leader>vs :source ~/dotfiles/.vimrc<cr>
+noremap <leader>R :tabe ~/dotfiles/.Rprofile<cr>
+noremap <leader>ab :tabe ~/.vim/vimHelpers/alts/abrev.vim<cr>
 
 " Fast exit of vim
 noremap <leader>qw :q!<cr>
