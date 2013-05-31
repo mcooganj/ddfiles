@@ -12,7 +12,7 @@ setwd("/Users/mcooganj/R/wd/")
 
 # default libraries
 require(fastmatch)
-require(RApack)
+# require(RApack)
 
 if (interactive()){
   # library(colorout)
