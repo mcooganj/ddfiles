@@ -353,6 +353,10 @@ nnoremap <C-s> :w!<cr>
 " normal mode map
 nnoremap E ea
 
+" insert mode -- complete fold
+inoremap <C-E> # {{{
+inoremap <C-Z> # }}}
+
 " hate these errors - note, fixing Q == q is dangerous
 :ca WQ wq
 :ca Wq wq
