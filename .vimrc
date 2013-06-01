@@ -156,6 +156,8 @@ noremap <silent> <LocalLeader>pz :call RAction("plot.zoo")<CR>
 noremap <silent> <LocalLeader>st :call RAction("str")<CR>
 noremap <silent> <LocalLeader>sm :call RAction("summary")<CR>
 noremap <silent> <LocalLeader>dm :call RAction("dim")<CR>
+noremap <silent> <LocalLeader>gt :call RAction("length")<CR>
+noremap <silent> <LocalLeader>nc :call RAction("nchar")<CR>
 noremap <silent> <LocalLeader>rm :call RAction("rm")<CR>
 noremap <silent> <LocalLeader>mm :call RAction("mode")<CR>
 noremap <silent> <LocalLeader>cc :call RAction("class")<CR>
@@ -363,10 +365,11 @@ inoremap <C-Z> # }}}
 :ca W w
 
 " Fast edit of key vim files
-noremap <leader>e :tabe ~/dotfiles/.vimrc<cr>
 noremap <leader>vs :source ~/dotfiles/.vimrc<cr>
-noremap <leader>R :tabe ~/dotfiles/.Rprofile<cr>
+noremap <leader>e :tabe ~/dotfiles/.vimrc<cr>
 noremap <leader>ab :tabe ~/.vim/vimHelpers/alts/abrev.vim<cr>
+noremap <leader>R :tabe ~/dotfiles/.Rprofile<cr>
+noremap <leader>rh :tabe ~/R/Rhelpers/helperFuncts.r<cr>
 
 " Fast exit of vim
 noremap <leader>qw :q!<cr>
