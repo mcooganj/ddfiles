@@ -313,6 +313,7 @@ set softtabstop=4	               " a tab is worth 4<space>
 set shiftwidth=4	               " an indent is worth 4<space>
 set nowrap                             " don't wrap-for me
 set foldmethod=marker                  " fold with {{{ , }}}
+set foldcolumn=5                      " show visual folding depth at LHS
 
 " keep my backups cleaned-up
 set backup                             " Activate backup stuff
