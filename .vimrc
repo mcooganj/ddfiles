@@ -33,7 +33,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
 Bundle 'mileszs/ack.vim.git'
-Bundle 'rson/vim-conque'
 Bundle 'jcfaria/Vim-R-plugin'
 Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
@@ -109,29 +108,6 @@ let g:EasyMotion_leader_key = ';'
 " ==>>> ack-vim - run ack inside vim, show results in a split window
 " :Ack[!] [options] {pattern} [{directory}]
 
-" ==>>> conque plugin
-" open a bash term inside vim: below or to the right
-nnoremap <D-F11> :ConqueTermSplit bash<CR>
-inoremap <D-F11> <C-o>:ConqueTermSplit bash<CR>
-nnoremap <D-F12> :ConqueTermVSplit bash<CR>
-inoremap <D-F12> <C-o>:ConqueTermVSplit bash<CR>
-
-" open an ipython term inside vim: below or to the right
-nnoremap <D-I> :ConqueTermSplit ipython<CR>
-inoremap <D-I> <C-o>:ConqueTermSplit ipython<CR>
-nnoremap <D-i> :ConqueTermVSplit ipython<CR>
-inoremap <D-i> <C-o>:ConqueTermVSplit ipython<CR>
-
-" speeding things up - including killing color
-let g:ConqueTerm_FastMode = 1
-let g:ConqueTerm_Color = 0
-
-" make escape ^l inside the Cterm
-let g:ConqueTerm_EscKey = '<C-l>'
-
-" send current line to terminal, <CR>, and return focus to vim
-nnoremap <D-F9> V<F9><CR><C-l><C-w>p
-
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " this gets your underscore character back - i prefer <M-1>
 " let vimrplugin_screenplugin = 0
@@ -163,6 +139,8 @@ noremap <silent> <LocalLeader>mm :call RAction("mode")<CR>
 noremap <silent> <LocalLeader>cc :call RAction("class")<CR>
 noremap <silent> <LocalLeader>nm :call RAction("names")<CR>
 noremap <silent> <LocalLeader>pr :call RAction("print")<CR>
+noremap <silent> <LocalLeader>tb :call RAction("attributes")<CR>
+noremap <silent> <LocalLeader>th :call RAction("length")<CR>
 
 " ==>>> surround
 " my fav is `ysiw <a href="www.rara.com">` which links word under cursor
@@ -260,6 +238,69 @@ function! SL(function)
   endif
 endfunction
 endif
+
+
+" {{{ swap text about a pivot: https://gist.github.com/Raimondi/1921196
+" Switch both sides around a 'pivot'.
+" e.g.: let's say we have this string
+"       abc && def
+" put the cursor on 'a' then vf&<leader>ssff
+" That will yield:
+"       def && abc
+
+function! Swap(...) "{{{
+  let start_v = col("'<")
+  let end_v = col("'>")
+  let mv = ''
+  let isMv = 0
+  while !isMv
+    let char = s:GetChar()
+    if char == '<Esc>'
+      return ''
+    endif
+    let mv .= char
+    let isMv = s:IsMovement(mv)
+    echon mv."\r"
+  endwhile
+  if isMv == 2
+    return ''
+  endif
+  exec "normal! ".end_v.'|'.mv
+  let lhs = '\%'.start_v.'c\(.\{-}\S\)'
+  if !a:0
+    let pivot = '\(\s*\%'.(end_v).'c.\s*\)'
+  else
+    let pivot = '\(\s*'.a:1.'*\%'.(end_v).'c'.a:1.'\+\s*\)'
+  endif
+  let rhs = '\(.*\%#.\)'
+  exec 's/'.lhs.pivot.rhs.'/\3\2\1/'
+endfunction "Swap }}}
+function! s:GetChar() "{{{
+  let char = getchar()
+  if type(char) == type(0) && char < 33
+    return '<Esc>'
+  elseif char
+    let char = nr2char(char)
+  endif
+  return char
+endfunction "GetChar }}}
+function! s:IsMovement(mv) "{{{
+  let ft = a:mv =~ '^\C\d*[fFtT].$'
+  let ft_partial = a:mv =~ '^\C\d*\%([fFtT].\?\)\?$'
+  let right = a:mv =~ '^\d*[l$|;,]\|g[m$]$'
+  let right_partial = a:mv =~ '^\d*\%([l$|;,]\|g[m$]\?\)\?$'
+  if !right_partial && !ft_partial
+    return 2
+  endif
+  return ft || right
+endfunction "IsMovement2Right }}}
+" Use last char as pivot.
+vmap <silent> <leader>s1 :<C-U>call Swap()<CR>
+" Use \S\+ as pivot. e.g.: &&
+vmap <silent> <leader>ss :<C-U>call Swap('\S')<CR>
+" Use \w\+ as pivot.
+vmap <silent> <leader>sw :<C-U>call Swap('\w')<CR>
+" }}} end swap around pivot
 
 """ ===>>> General Settings
 "set verbose=9                         " turn it on for testing
