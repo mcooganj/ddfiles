@@ -110,7 +110,7 @@ let g:EasyMotion_leader_key = ';'
 
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " this gets your underscore character back - i prefer <M-1>
-" let vimrplugin_screenplugin = 0
+let vimrplugin_screenplugin = 0
 " let vimrplugin_applescript = 0
 let vimrplugin_underscore = 0
 
