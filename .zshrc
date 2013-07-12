@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -28,7 +28,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -41,9 +41,12 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mcooganj/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/usr/X11/bin:/usr/texbin
 
 # set path stuff to get python etc working
-PATH=/usr/local/share/python:$PATH
-export PATH
+if [ $USER = 'mcoganj' ]; then
+    PATH=/usr/local/share/python:$PATH
+    export PATH
+fi
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-export EDITOR=vim
