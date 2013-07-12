@@ -38,7 +38,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'Raimondi/delimitMate'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'scrooloose/nerdtree'
 Bundle 'int3/vim-taglist-plus'
 Bundle 'gotcha/vimpdb'
 Bundle 'vim-scripts/Gundo'
@@ -160,7 +159,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
 
 " ==>>> nerdtree
 " open NT with F2
-nnoremap <F2> :NERDTreeToggle<CR>
+" nnoremap <F2> :NERDTreeToggle<CR>
 
 " ==>>> taglist: see http://mattpolito.info/post/1648956809/ctags-got-you-down
 " brew install ctags
