@@ -1,9 +1,9 @@
 # Matt Johnson's .Rprofile
 source('~/R/Rhelpers/helperFuncts.r')
 
-# hard code the UK repo for CRAN
+# hard code the Rstudio repo for CRAN
 r <- getOption("repos")
-r["CRAN"] <- "http://cran.ma.imperial.ac.uk"
+r["CRAN"] <- "http://cran.rstudio.com/"
 options(repos = r)
 
 setwd("/Users/mcooganj/R/wd/")
