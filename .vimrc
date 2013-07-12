@@ -47,7 +47,7 @@ Bundle 'vim-scripts/vim-flake8'
 Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'epeli/slimux'
 Bundle 'ivanov/vim-ipython'
-Bundle 'ervandrew/screen'
+Bundle 'Screen-vim---gnu-screentmux'
 
 " vim-scripts repos
 Bundle 'L9'
