@@ -50,6 +50,7 @@ Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
+Bundle 'tpope/vim-markdown'
 
 " vim-scripts repos
 Bundle 'L9'
@@ -210,6 +211,9 @@ noremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 
 " ==>>> screen - more config later may help
 let g:ScreenImpl = 'Tmux'
+
+" ==> markdown
+nnoremap <leader>m :silent! !open -a Marked.app '%:p'<cr>
 
 
 """ ===>>> Auto Commands {{{
