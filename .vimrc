@@ -47,6 +47,9 @@ Bundle 'vim-scripts/LaTeX-Box'
 Bundle 'epeli/slimux'
 Bundle 'ivanov/vim-ipython'
 Bundle 'Screen-vim---gnu-screentmux'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
 
 " vim-scripts repos
 Bundle 'L9'
