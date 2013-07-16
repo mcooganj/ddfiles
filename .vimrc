@@ -230,7 +230,7 @@ noremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 let g:ScreenImpl = 'Tmux'
 
 " ==> markdown
-nnoremap <leader>m :silent! !open -a Marked.app %:p<cr>
+nnoremap <C-m><C-k> :silent !open -a Marked.app %:p<cr>
 
 
 """ ===>>> Auto Commands {{{
