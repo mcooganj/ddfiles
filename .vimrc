@@ -43,7 +43,7 @@ Bundle 'gotcha/vimpdb'
 Bundle 'vim-scripts/Gundo'
 Bundle 'scrooloose/syntastic'
 Bundle 'vim-scripts/vim-flake8'
-Bundle 'vim-scripts/LaTeX-Box'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'epeli/slimux'
 Bundle 'ivanov/vim-ipython'
 Bundle 'Screen-vim---gnu-screentmux'
@@ -221,7 +221,9 @@ autocmd BufWritePost *.py call Flake8()
 " ==>>> LaTeX-Box
 " $ pip install psutil
 " note: default mappings are in ~/.vim/ftplugin/tex.vim:
-"
+" let g:LatexBox_viewer = 'Preview'
+let g:LatexBox_latexmk_options = '-pv'
+
 " ==>>> vim-slimux - more config later may help
 noremap <C-c><C-c> :SlimuxREPLSendLine<CR>
 noremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
