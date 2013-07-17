@@ -221,6 +221,7 @@ autocmd BufWritePost *.py call Flake8()
 " ==>>> LaTeX-Box
 " $ pip install psutil
 " note: default mappings are in ~/.vim/ftplugin/tex.vim:
+let g:LatexBox_viewer = 'open -a Skim'
 let g:LatexBox_latexmk_options = '-pvc'
 let g:LatexBox_latexmk_preview_continuously = 1
 
