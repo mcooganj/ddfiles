@@ -222,6 +222,7 @@ autocmd BufWritePost *.py call Flake8()
 " $ pip install psutil
 " note: default mappings are in ~/.vim/ftplugin/tex.vim:
 let g:LatexBox_latexmk_options = '-pvc'
+let g:LatexBox_latexmk_preview_continuously = 1
 
 " ==>>> vim-slimux - more config later may help
 noremap <C-c><C-c> :SlimuxREPLSendLine<CR>
