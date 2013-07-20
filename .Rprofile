@@ -1,5 +1,9 @@
 # Matt Johnson's .Rprofile
-source('~/R/Rhelpers/helperFuncts.r')
+
+# source helper functions into helper environment
+helpEnv <- new.env()
+source('~/R/Rhelpers/helperFuncts.r', local = helpEnv)
+attach(helpEnv)
 
 # hard code the Rstudio repo for CRAN
 r <- getOption("repos")
