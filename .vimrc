@@ -404,7 +404,14 @@ endfunction
 
 """ ===>>> Mappings
 
-" better escape - just map caps to contorl and then use C-[
+" quote words
+map <leader>q' ciw'<C-r>"'<esc>
+map <leader>q" ciw"<C-r>""<esc>
+map <leader>x' di'hPl2x
+map <leader>x" di"hPl2x
+map <leader>qs va':s/\%V'\%V/"/g<cr>
+
+" better escape - just map caps to control as well as esc
 
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
