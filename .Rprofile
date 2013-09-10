@@ -2,7 +2,7 @@
 
 # source helper functions into helper environment
 helpEnv <- new.env()
-source('~/R/Rhelpers/helperFuncts.r', local = helpEnv)
+source('~/Rproject/Rhelpers/helperFuncts.r', local = helpEnv)
 attach(helpEnv)
 
 # hard code the Rstudio repo for CRAN
@@ -24,11 +24,19 @@ setup_mcj <- function()
     .libPaths("/Users/mcj/rwd/rpax")
 }
 
+setup_minic <- function()
+{
+    setwd("/Users/minic/rwd/")
+    .libPaths("/Users/minic/rwd/rpax")
+}
+
 setup <- function()
 {
     switch(system('echo $USER', inter=TRUE),
            'mcooganj' = setup_mcooganj(),
-           'mcj' = setup_mcj())
+           'mcj' = setup_mcj(),
+           'minic' = setup_mcj()
+           )
 }
 # }}}
 
