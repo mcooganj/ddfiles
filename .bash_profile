@@ -20,4 +20,3 @@ alias rwd='cd /Users/mcooganj/R/wd/'
 PATH=/usr/local/share/python:$PATH
 export PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
