@@ -38,15 +38,19 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mcooganj/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/usr/X11/bin:/usr/texbin
+# export PATH=/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mcooganj/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/usr/X11/bin:/usr/texbin
 
 # set path stuff to get python etc working
-if [ $USER = 'mcoganj' ]; then
+if [ $USER = 'mcooganj' ]; then
     PATH=/usr/local/share/python:$PATH
     export PATH
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+# may not need the first of these functions
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
 
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
