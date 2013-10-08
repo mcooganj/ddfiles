@@ -1,4 +1,21 @@
 # Matt Johnson's .Rprofile
+.First <- function() {
+    options(
+            repos = c(CRAN = "http://cran.rstudio.com/"),
+            browserNLdisabled = TRUE,
+            deparse.max.lines = 2
+            )
+}
+
+if (interactive()) {
+    supressMessages(require(devtools))
+    require(setwidth)
+    require(vimcom)
+    supressMessages(require(fastmatch))
+    supressMessages(require(data.table))
+    supressMessages(require(xts))
+    #require(RApack)
+}
 
 # source helper functions into helper environment
 helpEnv <- new.env()
@@ -35,20 +52,9 @@ setup <- function()
     switch(system('echo $USER', inter=TRUE),
            'mcooganj' = setup_mcooganj(),
            'mcj' = setup_mcj(),
-           'minic' = setup_mcj()
+           'minic' = setup_minic()
            )
 }
 # }}}
 
 setup()
-
-# default libraries
-require(fastmatch)
-require(xts)
-#require(RApack)
-
-if (interactive()){
-    require(setwidth)
-    require(vimcom)
-}
-
