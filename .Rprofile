@@ -58,3 +58,4 @@ setup <- function()
 # }}}
 
 setup()
+# .Last
