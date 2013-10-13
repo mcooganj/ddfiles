@@ -8,12 +8,12 @@
 }
 
 if (interactive()) {
-    supressMessages(require(devtools))
-    require(setwidth)
-    require(vimcom)
-    supressMessages(require(fastmatch))
-    supressMessages(require(data.table))
-    supressMessages(require(xts))
+    suppressMessages(require(devtools))
+    suppressMessages(require(setwidth))
+    suppressMessages(require(vimcom))
+    suppressMessages(require(fastmatch))
+    suppressMessages(require(data.table))
+    suppressMessages(require(xts))
     #require(RApack)
 }
 
