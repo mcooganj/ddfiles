@@ -83,6 +83,8 @@ inoremap <C-g>c <C-o>:Gcommit<CR>
 nnoremap <C-g>r :Gread<CR>
 inoremap <C-g>r <C-o>:Gread<CR>
 
+nnoremap <C-g>p :!git push<CR>
+inoremap <C-g>p <C-o>:!git push<CR>
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
