@@ -31,8 +31,8 @@ options(repos = r)
 
 setup_mcooganj <- function()
 {
-    setwd("/Users/mcooganj/R/wd/")
-    .libPaths("/Users/mcooganj/R/wd/raPackages")
+    setwd("/Users/mcooganj/Rproject/wd/")
+    .libPaths("/Users/mcooganj/Rproject/wd/raPackages")
 }
 
 setup_mcj <- function()
