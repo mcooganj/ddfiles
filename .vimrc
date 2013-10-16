@@ -406,6 +406,9 @@ endfunction
 
 """ ===>>> Mappings
 
+" custom commands
+command Gtb execute '!git push' | x
+
 " quote words
 map <leader>q' ciw'<C-r>"'<esc>
 map <leader>q" ciw"<C-r>""<esc>
