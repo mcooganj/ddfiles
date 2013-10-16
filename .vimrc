@@ -407,7 +407,7 @@ endfunction
 """ ===>>> Mappings
 
 " custom commands
-command Gpc execute '!git push' | x
+command Gpx execute '!git push' | x
 
 " quote words
 map <leader>q' ciw'<C-r>"'<esc>
