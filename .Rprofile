@@ -45,7 +45,7 @@ setup_minic <- function()
 {
     setwd("/Users/minic/rwd/")
     .libPaths("/Users/minic/rwd/rpax")
-    quartx(width=5, height=5)
+    quartz(width=5, height=5)
 }
 
 setup <- function()
