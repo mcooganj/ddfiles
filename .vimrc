@@ -116,7 +116,7 @@ let g:EasyMotion_leader_key = ';'
 
 " ==>>> Vim-R-plugin - it is undesirable to make this work with Conque
 " this gets your underscore character back - i prefer <M-1>
-let vimrplugin_applescript = 1
+let vimrplugin_applescript = 0
 let vimrplugin_underscore = 0
 
 " do not send commands in insert mode
@@ -407,7 +407,7 @@ endfunction
 """ ===>>> Mappings
 
 " custom commands
-command Gpx execute '!git push' | x
+command Gpx execute '!git push' | xit
 
 " quote words
 map <leader>q' ciw'<C-r>"'<esc>
