@@ -267,7 +267,6 @@ function! SL(function)
 endfunction
 endif
 
-
 " {{{ swap text about a pivot: https://gist.github.com/Raimondi/1921196
 " Switch both sides around a 'pivot'.
 " e.g.: let's say we have this string
@@ -322,13 +321,13 @@ function! s:IsMovement(mv) "{{{
   endif
   return ft || right
 endfunction "IsMovement2Right }}}
+" }}} end swap around pivot
 " Use last char as pivot.
 vmap <silent> <leader>s1 :<C-U>call Swap()<CR>
 " Use \S\+ as pivot. e.g.: &&
 vmap <silent> <leader>ss :<C-U>call Swap('\S')<CR>
 " Use \w\+ as pivot.
 vmap <silent> <leader>sw :<C-U>call Swap('\w')<CR>
-" }}} end swap around pivot
 
 """ ===>>> General Settings
 "set verbose=9                         " turn it on for testing
@@ -408,6 +407,7 @@ endfunction
 
 " custom commands
 command Gpx execute '!git push' | xit
+nnoremap <C-R> :set filetype=r<cr>
 
 " quote words
 map <leader>q' ciw'<C-r>"'<esc>
