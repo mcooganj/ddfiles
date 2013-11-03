@@ -45,6 +45,8 @@ setup_minic <- function()
 {
     setwd("/Users/minic/rwd/")
     .libPaths("/Users/minic/rwd/rpax")
+    .First.sys()
+    quartz.options(width=4, height=4)
 }
 
 setup <- function()

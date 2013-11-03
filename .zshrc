@@ -40,6 +40,8 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 # export PATH=/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mcooganj/.rvm/rubies/ruby-1.9.3-p194/bin:/Users/mcooganj/.rvm/bin:/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/bin:/usr/X11/bin:/usr/texbin
 
+export PATH="/Applications/Racket v5.3.6/bin":$PATH
+
 # set path stuff to get python etc working
 if [ $USER = 'mcooganj' ]; then
     PATH=/usr/local/share/python:$PATH
