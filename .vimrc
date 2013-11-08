@@ -341,6 +341,7 @@ set autowrite                          " save a buffer when you leave it
 set autochdir                          " cd to dir containing file in buffer
 
 " appearance -
+match ErrorMsg /\%>99v.\+/             " highlight rows wider than 99 columns
 set bg=dark                            " set background to dark
 set switchbuf=usetab,newtab            " switch to the existing tab if already open, new if not.
 set laststatus=2                       " always show last line
