@@ -403,7 +403,6 @@ endfunction
 
 """ <<<===
 
-
 """ ===>>> Mappings
 
 " custom commands
@@ -421,8 +420,17 @@ map <leader>qs va':s/\%V'\%V/"/g<cr>
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
 
-" Faster Completion
-inoremap <tab> <C-N>
+" Auto Completion
+" fancy-tab
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+# omni remap
 inoremap <C-space> <C-x><C-o>
 
 " Saving: re-mapped to ^s[x]
@@ -456,6 +464,9 @@ noremap <leader>qw :q!<cr>
 
 " Visually select the text that was last edited/pasted
 nnoremap gV `[v`]
+
+" unhiglight
+nnoremap <silent> _ :nohl<CR>
 
 """ <<<===
 
