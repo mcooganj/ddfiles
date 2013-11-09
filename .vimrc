@@ -85,7 +85,7 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
-" command Gpx execute '!git push' |  xit
+command Gpx execute '!git push' |  xit
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
@@ -404,8 +404,7 @@ endfunction
 
 """ ===>>> Mappings
 
-" custom commands
-command Gpx execute '!git push' | xit
+" set filetype=r
 nnoremap <C-S><C-R> :set filetype=r<cr>
 
 " quote words
@@ -414,8 +413,6 @@ map <leader>q" ciw"<C-r>""<esc>
 map <leader>x' di'hPl2x
 map <leader>x" di"hPl2x
 map <leader>qs va':s/\%V'\%V/"/g<cr>
-
-" better escape - just map caps to control as well as esc
 
 " set leader to `,` - note localleader remains `\` for ftplugins
 let g:mapleader = ","
