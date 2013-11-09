@@ -1,3 +1,4 @@
+/* to s-link $ ln -s ~/dotfiles/.Xdefaults .Xdefaults */
 xterm*font: terminus-12
 xterm*boldFont: terminus-12
 xterm*loginShell: true
