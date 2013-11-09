@@ -85,6 +85,7 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
+" command Gpx execute '!git push' |  xit
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
@@ -162,7 +163,7 @@ noremap <silent> <LocalLeader>cc :call RAction("class")<CR>
 noremap <silent> <LocalLeader>nm :call RAction("names")<CR>
 noremap <silent> <LocalLeader>pr :call RAction("print")<CR>
 noremap <silent> <LocalLeader>tb :call RAction("attributes")<CR>
-noremap <silent> <LocalLeader>th :call RAction("length")<CR>
+noremap <silent> <LocalLeader>ng :call RAction("length")<CR>
 
 " ==>>> surround
 " my fav is `ysiw <a href="www.rara.com">` which links word under cursor
@@ -178,7 +179,6 @@ let g:indent_guides_color_change_percent = 30
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=dimgrey   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=4
-
 
 " ==>>> nerdtree
 " open NT with F2
@@ -236,7 +236,6 @@ let g:ScreenImpl = 'Tmux'
 
 " ==> markdown
 nnoremap <C-m><C-k> :silent !open -a Marked.app %:p<cr>
-
 
 """ ===>>> Auto Commands {{{
 
@@ -407,7 +406,7 @@ endfunction
 
 " custom commands
 command Gpx execute '!git push' | xit
-nnoremap <C-R> :set filetype=r<cr>
+nnoremap <C-S><C-R> :set filetype=r<cr>
 
 " quote words
 map <leader>q' ciw'<C-r>"'<esc>
