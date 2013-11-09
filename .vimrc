@@ -431,7 +431,7 @@ function! Tab_Or_Complete()
   endif
 endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-# omni remap
+" omni remap
 inoremap <C-space> <C-x><C-o>
 
 " Saving: re-mapped to ^s[x]
@@ -452,6 +452,7 @@ inoremap <C-Z> # }}}
 :ca WQ wq
 :ca Wq wq
 :ca W w
+:ca E e
 
 " Fast edit of key vim files
 noremap <leader>vs :source ~/dotfiles/.vimrc<cr>
