@@ -452,6 +452,7 @@ inoremap <C-Z> # }}}
 :ca WQ wq
 :ca Wq wq
 :ca W w
+:ca E e
 
 " Fast edit of key vim files
 noremap <leader>vs :source ~/dotfiles/.vimrc<cr>
