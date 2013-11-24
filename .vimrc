@@ -1,4 +1,4 @@
-" MJ's .vimrc this is it folks ... yerp
+" MJ's .vimrc ...
 
 set nocompatible		       " turn off vi compatability
 
@@ -440,9 +440,11 @@ nnoremap <C-s> :w!<cr>
 " normal mode map
 nnoremap E ea
 
-" insert mode -- complete fold
-inoremap <C-E> # {{{
-inoremap <C-Z> # }}}
+" insert mode tricks
+inoremap <C-F>e # {{{
+inoremap <C-F>z # }}}
+inoremap <C-E> <C-O>$
+inoremap <C-A> <C-O>^
 
 " hate these errors - note, fixing Q == q is dangerous
 :ca WQ wq
