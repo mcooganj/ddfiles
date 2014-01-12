@@ -85,7 +85,7 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
-command Gpx execute '!git push' |  xit
+command! Gpx execute '!git push' |  xit
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
@@ -228,7 +228,7 @@ let g:LatexBox_latexmk_options = '-pvc'
 let g:LatexBox_latexmk_preview_continuously = 1
 
 " ==>>> vim-slimux - more config later may help
-noremap <C-c><C-c> :SlimuxREPLSendLine<CR>
+noremap <C-c><C-l> :SlimuxREPLSendLine<CR>
 noremap <C-c><C-c> :SlimuxREPLSendSelection<CR>
 
 " ==>>> screen - more config later may help
@@ -447,17 +447,17 @@ inoremap <C-E> <C-O>$
 inoremap <C-A> <C-O>^
 
 " hate these errors - note, fixing Q == q is dangerous
-:ca WQ wq
-:ca Wq wq
-:ca W w
-:ca E e
+ca WQ wq
+ca Wq wq
+ca W w
+ca E e
 
 " Fast edit of key vim files
 noremap <leader>vs :source ~/dotfiles/.vimrc<cr>
 noremap <leader>e :tabe ~/dotfiles/.vimrc<cr>
 noremap <leader>ab :tabe ~/.vim/vimHelpers/alts/abrev.vim<cr>
 noremap <leader>R :tabe ~/dotfiles/.Rprofile<cr>
-noremap <leader>rh :tabe ~/R/Rhelpers/helperFuncts.r<cr>
+noremap <leader>rh :tabe ~/Rproject/Rhelpers/helperFuncts.r<cr>
 
 " Fast exit of vim
 noremap <leader>qw :q!<cr>
@@ -474,4 +474,4 @@ nnoremap <silent> _ :nohl<CR>
 " http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim
 
 " ==>>> tomorrow-night - set this last!
-colorscheme Tomorrow-Night                       " set color-scheme to TNB
+colorscheme Tomorrow-Night-Bright
