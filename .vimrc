@@ -2,16 +2,6 @@
 
 set nocompatible		       " turn off vi compatability
 
-" Kick the crutches -- disable arrow keys and esc
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
 " Bundles with vundle
 " NOTE: comments on same line as Bundle commands cause errors
 
@@ -85,7 +75,7 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
-command! Gpx execute '!git push' |  xit
+command! Gpx execute :tabdo '!git push' |  xit
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
@@ -237,7 +227,7 @@ let g:ScreenImpl = 'Tmux'
 " ==> markdown
 nnoremap <C-m><C-k> :silent !open -a Marked.app %:p<cr>
 
-""" ===>>> Auto Commands {{{
+" ===>>> Auto Commands {{{
 
 " Automatically cd into the directory that the file is in
 if strpart(expand("%:p:h"), 0, 16) == "/Users/mcooganj/"
@@ -365,13 +355,11 @@ set ignorecase                         " default is to look across cases
 set smartcase                          " except when search string incl UPPERS
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
-
 set showcmd		               " show command as you type
 
 " command line tab completion stuff
 set wildmenu		               " cmd cpln - show matches on <Tab>
 set wildmode=list:longest,full         " make cmdline tab completion similar to bash
-
 
 " formatting tweaks
 set textwidth=100
@@ -466,7 +454,7 @@ noremap <leader>qw :q!<cr>
 nnoremap gV `[v`]
 
 " unhiglight
-nnoremap <silent> _ :nohl<CR>
+nnoremap <silent> <C-_> :nohl<CR>
 
 """ <<<===
 
