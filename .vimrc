@@ -75,7 +75,7 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
-command! Gpx execute "tabdo '!git push' | xit"
+command! Gpx execute ':tabdo !git push' | xall
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
