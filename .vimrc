@@ -37,6 +37,7 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'epeli/slimux'
 Bundle 'ivanov/vim-ipython'
 Bundle 'Screen-vim---gnu-screentmux'
+Bundle 'ervandrew/screen'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
@@ -109,6 +110,10 @@ let g:EasyMotion_leader_key = ';'
 " this gets your underscore character back - i prefer <M-1>
 let vimrplugin_applescript = 0
 let vimrplugin_underscore = 0
+
+" start R in a verticle split 20 columns wide
+let vimrplugin_vsplit = 1
+let vimrplugin_rconsole_width = 20
 
 " do not send commands in insert mode
 let g:vimrplugin_insert_mode_cmds = 0
