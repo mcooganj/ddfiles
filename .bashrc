@@ -1,3 +1,6 @@
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
 # Change the TERM environment variable (to get 256 colors) and make Vim
 # connecting to X Server even if running in a terminal emulator (to get
 # dynamic update of syntax highlight and Object Browser):
