@@ -113,7 +113,7 @@ let vimrplugin_underscore = 0
 
 " start R in a verticle split 20 columns wide
 let vimrplugin_vsplit = 1
-let vimrplugin_rconsole_width = 20
+let vimrplugin_rconsole_width = 60
 
 " do not send commands in insert mode
 let g:vimrplugin_insert_mode_cmds = 0
