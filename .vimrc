@@ -76,7 +76,8 @@ inoremap <C-g>r <C-o>:Gread<CR>
 
 nnoremap <C-g>p :!git push<CR>
 inoremap <C-g>p <C-o>:!git push<CR>
-command! Gpx execute ':tabdo !git push' | xall
+command! Gpx execute '!git push' | xit
+command! Gpxa execute ':tabdo Gpx'
 " ==>>> unimpaired: http://vimcasts.org/episodes/bubbling-text/
 
 " Bubble single lines - select text in visual mode and shift it about
@@ -113,7 +114,7 @@ let vimrplugin_underscore = 0
 
 " start R in a verticle split 20 columns wide
 let vimrplugin_vsplit = 1
-let vimrplugin_rconsole_width = 40
+let vimrplugin_rconsole_width = q0
 
 " do not send commands in insert mode
 let g:vimrplugin_insert_mode_cmds = 0
